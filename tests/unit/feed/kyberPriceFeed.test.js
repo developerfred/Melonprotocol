@@ -2,7 +2,7 @@
  * @file Tests simple cases of updating price against a Kyber deployment
  *
  * @test Some unrelated account cannot update feed
- * @test Registy owner an update feed
+ * @test Registry owner an update feed
  * @test Delegated updater can update the feed
  * @test MLN price update on reserve changes price on feed post-update
  * @test Normal spread condition from Kyber rates yields midpoint price
@@ -76,7 +76,9 @@ describe('update', () => {
         kyberNetworkProxy.options.address,
         toWei('0.5', 'ether'),
         weth.options.address,
-        toWei('0.1', 'ether')
+        toWei('0.1', 'ether'),
+        toWei('0.1', 'ether'),
+        deployer
       ],
       deployerTxOpts
     );
@@ -384,7 +386,9 @@ describe('getPrice', () => {
         kyberNetworkProxy.options.address,
         toWei('0.5', 'ether'),
         weth.options.address,
-        toWei('0.1', 'ether')
+        toWei('0.1', 'ether'),
+        toWei('0.1', 'ether'),
+        deployer
       ],
       deployerTxOpts
     );
